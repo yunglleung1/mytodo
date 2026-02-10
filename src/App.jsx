@@ -9,11 +9,6 @@ const App = () => {
   const [text, setText] = useState('');
   const [list, setList] = useState([]);
 
-  const addToList = () => {
-    let newList = [...list, text]
-    setList(newList);
-  }
-
   useEffect(() => {
     console.log(text);
   });
@@ -22,8 +17,16 @@ const App = () => {
     <>
       <div>
         <TextBox setText = {setText}></TextBox>
-        <AddButton addToList = {addToList}></AddButton>
-        <List list = {list}></List>
+        <AddButton
+          text = {text}
+          list = {list}
+          setList = {setList}
+        >          
+        </AddButton>
+        <List 
+          list = {list}
+          setList = {setList}
+        ></List>
       </div>
     </>
   )
