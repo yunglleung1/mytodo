@@ -9,4 +9,8 @@ const removeFromList = (index, list, setList) => {
     setList(newList);
   }
 
-  export {addToList, removeFromList};
+const clearTextBox = (setText) => {
+    setText('');
+}
+
+  export {addToList, removeFromList, clearTextBox};

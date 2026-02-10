@@ -1,11 +1,16 @@
-import {addToList} from './todo-helpers.js';
+import {addToList, clearTextBox} from './todo-helpers.js';
 
-const AddButton = ({text, list, setList}) => {
+const AddButton = ({text, setText, list, setList}) => {
+
+    const handleAdd = () => {
+        addToList(text, list, setList);
+        clearTextBox(setText);
+    };
 
     return(
         <>
            <button
-                onClick = {() => addToList(text, list, setList)}
+                onClick = {() => handleAdd()}
            >
                 {'Add'}
             </button>

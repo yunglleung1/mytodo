@@ -16,11 +16,16 @@ const App = () => {
   return (
     <>
       <div>
-        <TextBox setText = {setText}></TextBox>
+        <TextBox
+          text = {text} 
+          setText = {setText}
+        >          
+        </TextBox>
         <AddButton
           text = {text}
+          setText = {setText}
           list = {list}
-          setList = {setList}
+          setList = {setList}          
         >          
         </AddButton>
         <List 
