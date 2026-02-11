@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <>
-      <div>
+      <div className = "bg-gray-900 text-white p-6 rounded-lg shadow-lg min-h-screen">
         <TextBox
           text = {text} 
           setText = {setText}
