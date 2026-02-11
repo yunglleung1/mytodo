@@ -7,7 +7,7 @@ const List = ({list, setList}) => {
                     <ul>{list.map((item, idx) => 
                         <li 
                             key = {idx}
-                            className = "hover:bg-grey-700 hover:border-indigo-500 py-2 px-4 rounded-md border border-transparent transition duration-150"
+                            className = "bg-gray-700 shadow-md hover:bg-gray-600 py-3 px-4 mb-2 rounded-lg border border-gray-600 transition duration-150"
                         >
                                 {`${item}`}
                                 <DeleteButton 
