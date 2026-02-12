@@ -10,7 +10,7 @@ const AddButton = ({text, setText, list, setList}) => {
     return(
         <>
            <button
-                className = "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-200"
+                className = "bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-200"
                 onClick = {() => handleAdd()}
            >
                 {'Add'}
