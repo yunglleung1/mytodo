@@ -13,4 +13,19 @@ const clearTextBox = (setText) => {
     setText('');
 }
 
-  export {addToList, removeFromList, clearTextBox};
+/*
+const fakeDelay = (addToList, text, list, setList, setIsAdding) => {
+    setTimeout(() => {// fake delay so spinner shows
+        setIsAdding(false);
+        addToList(text, list, setList);
+    },400)
+}*/
+
+const fakeDelay = (action, actionItems, delayControl) => {
+    setTimeout(() => {// fake delay so spinner shows
+        delayControl(false);
+        action(...actionItems);
+    },400)
+}
+
+export {addToList, removeFromList, clearTextBox, fakeDelay};
