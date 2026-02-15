@@ -4,11 +4,13 @@ import TextBox from './TextBox';
 import AddButton from './AddButton';
 import TrashButton from './TrashButton';
 import List from './List';
+import DeletedUndo from './DeletedUndo';
 
 const App = () => {
 
   const [text, setText] = useState('');
   const [list, setList] = useState([]);
+  const [undoItem, setUndoItem] = useState(null);
 
   useEffect(() => {
     console.log(text);
@@ -37,7 +39,19 @@ const App = () => {
         <List 
           list = {list}
           setList = {setList}
+          setUndoItem = {setUndoItem}
         ></List>
+        {undoItem ?
+          <DeletedUndo
+            list = {list} 
+            setList = {setList}
+            undoItem = {undoItem} 
+            setUndoItem = {setUndoItem}
+          />
+          :
+          <></>
+        }
+
       </div>
     </>
   )

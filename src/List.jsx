@@ -1,6 +1,6 @@
 import DeleteButton  from './DeleteButton.jsx';
 
-const List = ({list, setList}) => {
+const List = ({list, setList, setUndoItem}) => {
     return(
         <>
             {list.length ? 
@@ -14,6 +14,7 @@ const List = ({list, setList}) => {
                                     idx = {idx} 
                                     list = {list} 
                                     setList = {setList}
+                                    setUndoItem = {setUndoItem}
                                 />
                         </li>
                     )}</ul>

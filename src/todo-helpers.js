@@ -13,14 +13,6 @@ const clearTextBox = (setText) => {
     setText('');
 }
 
-/*
-const fakeDelay = (addToList, text, list, setList, setIsAdding) => {
-    setTimeout(() => {// fake delay so spinner shows
-        setIsAdding(false);
-        addToList(text, list, setList);
-    },400)
-}*/
-
 const fakeDelay = (action, actionItems, delayControl) => {
     setTimeout(() => {// fake delay so spinner shows
         delayControl(false);
@@ -28,4 +20,8 @@ const fakeDelay = (action, actionItems, delayControl) => {
     },400)
 }
 
-export {addToList, removeFromList, clearTextBox, fakeDelay};
+const snackBarRemovalTimer = (setUndoItem) => {
+    setTimeout(() => setUndoItem(null), 5000);   // auto-hide after 5 sec
+}
+
+export {addToList, removeFromList, clearTextBox, fakeDelay, snackBarRemovalTimer};

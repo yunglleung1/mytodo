@@ -1,12 +1,14 @@
-import {removeFromList, fakeDelay} from './todo-helpers';
+import {removeFromList, fakeDelay, snackBarRemovalTimer} from './todo-helpers';
 import {useState} from 'react';
 
-const DeleteButton = ({idx, list, setList}) => {
+const DeleteButton = ({idx, list, setList, setUndoItem}) => {
     const [isDeletng, setIsDeleting] = useState(false);
 
     const handleDelete = () => {
         setIsDeleting(true);
-        fakeDelay(removeFromList, [idx, list, setList], setIsDeleting)
+        setUndoItem({delItem: list[idx], delItmIdx: idx});
+        fakeDelay(removeFromList, [idx, list, setList], setIsDeleting);
+        snackBarRemovalTimer(setUndoItem);
     }
 
     return(
