@@ -24,4 +24,6 @@ const snackBarRemovalTimer = (setUndoItem) => {
     setTimeout(() => setUndoItem(null), 5000);   // auto-hide after 5 sec
 }
 
-export {addToList, removeFromList, clearTextBox, fakeDelay, snackBarRemovalTimer};
+const htmlTagClass = document.documentElement.classList;
+
+export {addToList, removeFromList, clearTextBox, fakeDelay, snackBarRemovalTimer, htmlTagClass};
