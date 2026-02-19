@@ -1,4 +1,5 @@
-
+import {buttonClass, trashButtonClass} from './todo-helpers';
+ 
 const TrashButton = ({setList}) => {
     
     const handleTrashOnClick = () => {
@@ -8,11 +9,13 @@ const TrashButton = ({setList}) => {
     return(
         <>
         <svg
-            className = "bg-red-600 hover:bg-red-700 hover:scale-105 text-white font-bold py-2 px-2 rounded-lg shadow-md transition duration-200 size-10" 
+            className = {buttonClass + " " + trashButtonClass} 
             xmlns = "http://www.w3.org/2000/svg" 
             fill = "none" 
             viewBox = "0 0 24 24" 
-            strokeWidth = {1.5} 
+            strokeWidth = {2}
+            width = "50" 
+            height = "50" 
             stroke = "currentColor"
             onClick = {handleTrashOnClick}
 

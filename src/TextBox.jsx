@@ -1,3 +1,4 @@
+import {inputFieldClass} from './todo-helpers';
 
 const TextBox = ({text, setText}) => {
     return(
@@ -6,6 +7,7 @@ const TextBox = ({text, setText}) => {
                 type = "text"
                 value = {text}
                 onChange = {(e) => setText(e.target.value)}
+                className = {inputFieldClass}
             >
             </input>
         </>

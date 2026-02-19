@@ -1,13 +1,14 @@
 import DeleteButton  from './DeleteButton.jsx';
+import {toDoListClass, toDoItemClass, itemClass} from './todo-helpers';
 
 const List = ({list, setList, setUndoItem}) => {
     return(
-        <>
+        <div className = {toDoListClass}>
             {list.length ? 
                     <ul>{list.map((item, idx) => 
                         <li 
                             key = {idx}
-                            className = "bg-white dark:bg-gray-700 shadow-md hover:bg-gray-600 py-3 px-4 mb-2 rounded-lg border border-gray-600 transition duration-150 flex items-center justify-between gap-3 w-full"
+                            className = {toDoItemClass + " " + itemClass}
                         >
                                 {`${item}`}
                                 <DeleteButton 
@@ -23,7 +24,7 @@ const List = ({list, setList, setUndoItem}) => {
                         {'No tasks yet.'}                    
                     </>
             }
-        </>
+        </div>
     );
 }
 

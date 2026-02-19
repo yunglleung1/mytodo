@@ -8,7 +8,7 @@ import DeletedUndo from './DeletedUndo';
 import SunIcon from './SunIcon';
 import MoonIcon from './MoonIcon';
 
-import {htmlTagClass} from './todo-helpers.js';
+import {htmlTagClass, mainWrapperClass, headerClass, toggleButtonClass, inputButtonRowClass,toDoListClass, toDoItemClass} from './todo-helpers.js';
 
 const App = () => {
 
@@ -32,19 +32,18 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className={theme === "dark" ? "dark" : ""}>
+    <div className={`${theme === "dark" ? "dark" : ""}`}>
       <button
         onClick = {() => setTheme(theme === "dark" ? "light" : "dark")}
-        className = "p-2 rounded-full hover:bg-gray-700 transition"
       >
         {theme === "dark" ? 
-          <SunIcon className="h-6 w-6 text-yellow-400"/> 
+          <SunIcon className = "h-6 w-6 text-yellow-400 flex-shrink-0"/> 
             : 
-          <MoonIcon className="h-6 w-6 text-gray-600" />
+          <MoonIcon className = "h-6 w-6 text-gray-600 flex-shrink-0" />
         }
       </button>
-      <div className = "bg-white text-gray-900 dark:bg-gray-800 dark:text-white p-8 rounded-xl shadow-2xl max-w-3xl mx-auto min-h-screen">
-        <div className = "flex items-center justify-center gap-3 w-full m-4">
+      <div className = {mainWrapperClass}>
+        <div className = {inputButtonRowClass}>
           <TextBox
             text = {text} 
             setText = {setText}
