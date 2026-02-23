@@ -10,6 +10,8 @@ import MoonIcon from './MoonIcon';
 
 import {htmlTagClass, mainWrapperClass, headerClass, toggleButtonClass, inputButtonRowClass,toDoListClass, toDoItemClass} from './todo-helpers.js';
 
+import api from './api';  // ← your new file
+
 const App = () => {
 
   const [text, setText] = useState('');
@@ -30,6 +32,14 @@ const App = () => {
     localStorage.setItem("theme", theme);
     theme === "dark" ? htmlTagClass.add("dark") : htmlTagClass.remove("dark");
   }, [theme]);
+
+  // GET all tasks on first mount
+  useEffect(() => {
+    api.get('/tasks').then(res => {
+      console.log("res: ", res);
+      setList(res.data);
+    });
+  }, []);
 
   return (
     <div className={`${theme === "dark" ? "dark" : ""}`}>

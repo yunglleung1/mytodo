@@ -1,5 +1,6 @@
 import {addToList, clearTextBox, fakeDelay, buttonClass, addButtonClass, loadingSpinnerClass} from './todo-helpers.js';
 import {useState} from 'react';
+import api from './api';  // ← new file
 
 const AddButton = ({text, setText, list, setList}) => {
 
@@ -8,7 +9,12 @@ const AddButton = ({text, setText, list, setList}) => {
     const handleAdd = () => {
         setIsAdding(true);
         clearTextBox(setText);
-        fakeDelay(addToList, [text, list, setList], setIsAdding);
+
+        // POST new task
+        api.post('/tasks', { text }).then(res => {
+            console.log('res: ', res);
+            fakeDelay(addToList, [text, list, setList], setIsAdding);
+        });        
     };
 
     return(
