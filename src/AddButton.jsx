@@ -11,8 +11,8 @@ const AddButton = ({text, setText, list, setList}) => {
         clearTextBox(setText);
 
         // POST new task
-        api.post('/tasks', { text }).then(res => {
-            console.log('res: ', res);
+        api.post('/tasks', {title: text}).then(res => {
+            // console.log('AddButton Res: ', res.data);
             fakeDelay(addToList, [text, list, setList], setIsAdding);
         });        
     };

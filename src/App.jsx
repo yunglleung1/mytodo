@@ -36,8 +36,8 @@ const App = () => {
   // GET all tasks on first mount
   useEffect(() => {
     api.get('/tasks').then(res => {
-      console.log("res: ", res);
-      setList(res.data);
+      // console.log("res.data.map(obj => obj.title: ", res.data.map(obj => obj.title));
+      setList(res.data.map(obj => obj.title));
     });
   }, []);
 
